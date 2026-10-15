@@ -1,0 +1,102 @@
+/* Configurações Globais*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Heebo',sans-serif;
+}
+
+body{
+    background-color: #ffffff;
+    color: #21243d;
+}
+
+/*Cabeçalho*/
+.cabeçalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 140px 20px;
+    gap: 40px;
+}
+
+.cabeçalho h1{
+    font-size: 41px;
+    font-weight: 700;
+    line-height: 60px;
+    color: #21243d;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.cabeçalho.resumo{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #21243d;
+    max-width: 497px;
+    margin-bottom: 38px;
+}
+
+.button-download{
+    display: inline-block;
+    width: 208px;
+    height: 47px;
+    background-color: #ff6464;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 47px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: backgroud-color 0.2s ease;
+}
+
+.button-download:hover{
+    background-color: #e55353;
+}
+
+.cabeçalho img{
+    width: 243px;
+    height: 243px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.formacoes{
+    background-color: #edf7fa;
+    padding: 60px 20px;
+    width: 100%;
+}
+
+.formacoes h2{
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+    font-size: 22px;
+    font-weight: 400;
+    color: #21243d;
+}
+
+.card{
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 24px;
+    flex: 1;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.003);
+}
+
+.card h3{
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 38px;
+    color: #21243d;
+    max-width: 374px;
+    margin-bottom: 15px;
+}
+
+.card-meta{
+    font-size: ;
+}

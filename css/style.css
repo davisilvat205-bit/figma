@@ -1,102 +1,525 @@
-/* Configurações Globais*/
-*{
+```css
+/* ========================================
+   IMPORTAÇÃO DA FONTE
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap');
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Heebo',sans-serif;
 }
 
-body{
-    background-color: #ffffff;
-    color: #21243d;
+:root {
+    --cor-texto: #21243d;
+    --cor-destaque: #ff6464;
+    --cor-fundo: #edf7fa;
+    --cor-branca: #ffffff;
+    --cor-cinza: #8695a4;
+    --largura-conteudo: 900px;
 }
 
-/*Cabeçalho*/
-.cabeçalho{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Heebo', sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-branca);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3, p {
+    overflow-wrap: break-word;
+}
+
+/* ========================================
+   APRESENTAÇÃO / CABEÇALHO
+======================================== */
+.cabeçalho {
+    width: 100%;
+    max-width: var(--largura-conteudo);
+    min-height: 418px;
     margin: 0 auto;
-    padding: 140px 20px;
-    gap: 40px;
+    padding: 100px 30px 65px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.cabeçalho h1{
-    font-size: 41px;
+.cabeçalho h1 {
+    width: 60%;
+    font-size: 36px;
+    line-height: 1.25;
     font-weight: 700;
-    line-height: 60px;
-    color: #21243d;
-    max-width: 500px;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+    color: var(--cor-texto);
+}
+
+.cabeçalho h1 span {
+    color: inherit;
+}
+
+.resumo {
+    width: 55%;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 26px;
+}
+
+.button-download {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-branca);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 2px;
+    transition: background-color 0.25s, transform 0.25s;
+}
+
+.button-download:hover {
+    background-color: #e65353;
+    transform: translateY(-2px);
+}
+
+.cabeçalho > img {
+    position: absolute;
+    top: 105px;
+    right: 11%;
+    width: 185px;
+    height: 185px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 8px 0 #edf7fa;
+}
+
+/* ========================================
+   SEÇÃO DE FORMAÇÕES
+======================================== */
+.formacoes {
+    width: 100%;
+    background-color: var(--cor-fundo);
+    padding: 16px 30px 24px;
+}
+
+.formacoes > h2 {
+    max-width: 834px;
+    margin: 0 auto 12px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cards-container {
+    width: 100%;
+    max-width: 834px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    align-items: start;
+}
+
+/* ========================================
+   CARDS
+======================================== */
+.card {
+    min-width: 0;
+    min-height: 225px;
+    background-color: var(--cor-branca);
+    padding: 18px;
+    border-radius: 3px;
+    box-shadow: 0 3px 10px rgba(33, 36, 61, 0.025);
+    transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(33, 36, 61, 0.08);
+    transform: translateY(-2px);
+}
+
+.card h3 {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
-.cabeçalho.resumo{
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #21243d;
-    max-width: 497px;
-    margin-bottom: 38px;
+.card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    margin-bottom: 14px;
 }
 
-.button-download{
-    display: inline-block;
-    width: 208px;
-    height: 47px;
-    background-color: #ff6464;
-    color: #ffffff;
-    text-decoration: none;
-    text-align: center;
-    line-height: 47px;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 4px;
-    transition: backgroud-color 0.2s ease;
+.card-meta time {
+    white-space: nowrap;
 }
 
-.button-download:hover{
-    background-color: #e55353;
+.divider {
+    color: var(--cor-texto);
 }
 
-.cabeçalho img{
-    width: 243px;
-    height: 243px;
-    object-fit: cover;
-    border-radius: 50%;
+.tags {
+    color: var(--cor-texto);
 }
 
-.formacoes{
-    background-color: #edf7fa;
-    padding: 60px 20px;
+.card p {
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+/* ========================================
+   EXPERIÊNCIAS
+======================================== */
+.Experiencia,
+.Experiencia-2 {
+    grid-column: 1 / -1;
     width: 100%;
+    display: grid;
+    grid-template-columns: 188px minmax(0, 1fr);
+    column-gap: 14px;
+    row-gap: 8px;
+    align-items: start;
+    padding: 10px 0 24px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.formacoes h2{
-    max-width: 1200px;
-    margin: 0 auto 20px auto;
-    font-size: 22px;
-    font-weight: 400;
-    color: #21243d;
+.Experiencia img,
+.Experiencia-2 img {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    width: 188px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
-.card{
-    background-color: #ffffff;
-    border-radius: 4px;
-    padding: 24px;
-    flex: 1;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.003);
-}
-
-.card h3{
-    font-size: 26px;
+.Experiencia h2,
+.Experiencia-2 h2 {
+    font-size: 24px;
+    line-height: 1.3;
     font-weight: 700;
-    line-height: 38px;
-    color: #21243d;
-    max-width: 374px;
-    margin-bottom: 15px;
 }
 
-.card-meta{
-    font-size: ;
+.container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 4px 0;
+    color: var(--cor-cinza);
+    font-size: 16px;
 }
+
+.badge {
+    display: inline-block;
+    padding: 0 10px;
+    background-color: #142850;
+    color: var(--cor-branca);
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.Experiencia p,
+.Experiencia-2 p {
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+/* ========================================
+   HABILIDADES
+======================================== */
+.skill,
+.skill-2 {
+    min-width: 0;
+    padding: 18px;
+    background-color: var(--cor-branca);
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(33, 36, 61, 0.04);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.skill:hover,
+.skill-2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(33, 36, 61, 0.08);
+}
+
+.skill img,
+.skill-2 img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 14px;
+}
+
+.skill h2,
+.skill-2 h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.skill p,
+.skill-2 p {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+.rodape {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 40px 15px 15px;
+    text-align: center;
+    background-color: var(--cor-branca);
+}
+
+.imagens-final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 20px;
+}
+
+.imagens-final img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+
+.imagens-final img:hover {
+    transform: scale(1.12);
+}
+
+.rodape p {
+    font-size: 12px;
+    color: var(--cor-texto);
+}
+
+/* ========================================
+   TABLETS
+======================================== */
+@media (min-width: 701px) and (max-width: 950px) {
+    .cabeçalho {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .cabeçalho h1 {
+        font-size: 32px;
+    }
+
+    .cabeçalho > img {
+        right: 8%;
+        width: 170px;
+        height: 170px;
+    }
+
+    .formacoes {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .cards-container {
+        gap: 14px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .Experiencia,
+    .Experiencia-2 {
+        grid-template-columns: 165px minmax(0, 1fr);
+    }
+
+    .Experiencia img,
+    .Experiencia-2 img {
+        width: 165px;
+        height: 125px;
+    }
+}
+
+/* ========================================
+   CELULARES
+======================================== */
+@media (max-width: 700px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* Apresentação */
+    .cabeçalho {
+        min-height: auto;
+        padding: 60px 22px 55px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cabeçalho > img {
+        position: static;
+        order: -1;
+        width: 135px;
+        height: 135px;
+        margin: 0 auto 28px;
+        box-shadow: 0 6px 0 #edf7fa;
+    }
+
+    .cabeçalho h1 {
+        width: 100%;
+        max-width: 320px;
+        font-size: 26px;
+        line-height: 1.25;
+        margin-bottom: 20px;
+        letter-spacing: 0;
+    }
+
+    .resumo {
+        width: 100%;
+        max-width: 350px;
+        font-size: 12px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    .button-download {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    /* Formações */
+    .formacoes {
+        padding: 16px 15px 24px;
+    }
+
+    .formacoes > h2 {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .cards-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .card {
+        width: 100%;
+        min-height: auto;
+        padding: 16px;
+        border-radius: 3px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 16px;
+    }
+
+    .card-meta {
+        gap: 12px;
+        font-size: 12px;
+        margin-bottom: 14px;
+    }
+
+    .card p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* Experiências */
+    .Experiencia,
+    .Experiencia-2 {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        padding: 15px 0 22px;
+    }
+
+    .Experiencia img,
+    .Experiencia-2 img {
+        grid-column: 1;
+        grid-row: auto;
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: contain;
+        object-position: left center;
+        margin-bottom: 3px;
+    }
+
+    .Experiencia h2,
+    .Experiencia-2 h2 {
+        font-size: 20px;
+    }
+
+    .container {
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .badge {
+        font-size: 13px;
+    }
+
+    .Experiencia p,
+    .Experiencia-2 p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* Habilidades */
+    .skill,
+    .skill-2 {
+        grid-column: 1;
+        padding: 16px;
+    }
+
+    .skill img,
+    .skill-2 img {
+        height: 130px;
+    }
+
+    .skill h2,
+    .skill-2 h2 {
+        font-size: 20px;
+    }
+
+    /* Rodapé */
+    .rodape {
+        padding: 28px 10px 18px;
+        margin-top: 5px;
+    }
+
+    .imagens-final {
+        gap: 22px;
+        margin-bottom: 16px;
+    }
+
+    .imagens-final img {
+        width: 26px;
+        height: 26px;
+    }
+}
+```
